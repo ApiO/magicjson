@@ -1,0 +1,45 @@
+﻿<Window x:Class="MagicJson.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MagicJson" Height="570" Width="700" MinHeight="570" MinWidth="700" Icon="/Resources\script_code.png">
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="302*" />
+            <ColumnDefinition Width="376*" />
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="0,24,0,0" Name="tabControls" FontSize="12" Grid.ColumnSpan="2">
+            <TabItem Header="Validations" Name="tabValidations" IsSelected="True" FontSize="12">
+                <Grid>
+                    <TabControl Name="tabControlValidation">
+                        <TabItem Header="Live" Name="tabLive">
+                            <Grid />
+                        </TabItem>
+                        <TabItem Header="Json" Name="tabJson">
+                            <Grid />
+                        </TabItem>
+                        <TabItem Header="Schema" Name="tabSchema">
+                            <Grid />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Documentation" Name="tabDocumentation">
+                <Grid>
+                    <TabControl Name="tabControl1">
+                        <TabItem Header="Live" Name="tabLiveDoc">
+                            <Grid />
+                        </TabItem>
+                        <TabItem Header="Files" Name="tabFileDoc">
+                            <Grid />
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Menu Name="menu" FontSize="12" Height="23" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="File">
+                <MenuItem Header="Close" Click="CloseClick"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

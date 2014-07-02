@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="MagicJson.UserControls.JsonValidation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="600">
+    <Grid>
+        <GroupBox Header="JSON files" Height="230" Margin="6,59,6,0" Name="groupBox4" VerticalAlignment="Top">
+            <Grid>
+                <DataGrid  Name="dgJsonFiles"
+					HeadersVisibility="None" AllowDrop="True" AutoGenerateColumns="True" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Focusable="False"
+					Margin="-3,0,-3,-3" 
+					AlternatingRowBackground="#FFE8E8E8" HorizontalGridLinesBrush="#FFBEBEBE" VerticalGridLinesBrush="#FFBEBEBE" Background="Gray" BorderBrush="#333333" RowBackground="#FFDEDEDE"
+					DragDrop.Drop="DgJsonDragDrop" DragEnter="DataGridDragEnter" LoadingRow="DgJsonFilesLoadingRow" MouseDoubleClick="DgJsonRowDblClick" SelectedCellsChanged="DgJsonFilesSelectedCellsChanged"/>
+            </Grid>
+        </GroupBox>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Click="BtAddJsonClick" Margin="0,295,87,0" Width="66" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Margin="0,0,2,0" Source="/Resources\script_add.png" />
+                <TextBlock>Add</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Click="BtClearClick" Margin="0,295,12,0" Width="66" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Margin="0,0,2,0" Source="/Resources\cross.png" />
+                <TextBlock>Clear</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Click="BtValidateJsonClick" Margin="12,295,0,0" Width="87" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Margin="0,0,2,0" Source="/Resources\cog.png" />
+                <TextBlock>Validate</TextBlock>
+            </StackPanel>
+        </Button>
+        <Label Content="Schema file path:" Height="18" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label3" VerticalAlignment="Top" />
+        <Button Content="Browse" Height="23" HorizontalAlignment="Right" Margin="0,29,6,0" Name="btBrowseSchema" VerticalAlignment="Top" Width="75" Click="BtBrowseSchemaClick" />
+        <TextBox Height="23" Margin="6,30,87,0" Name="tbSchemaFile" VerticalAlignment="Top" AllowDrop="False" IsEnabled="False" Foreground="White" />
+        <GroupBox Header="Detail" Margin="6,344,6,6" Name="groupBox5">
+            <Grid>
+                <TextBox Name="tbJsonDetail" Margin="-3,0,-3,-3" BorderBrush="#00000000" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" BorderThickness="0" />
+            </Grid>
+        </GroupBox> 
+    </Grid>
+</UserControl>

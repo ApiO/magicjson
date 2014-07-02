@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="MagicJson.UserControls.SchemaValidation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="600">
+    <Grid>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Click="BtAddSchemaClick" Margin="0,232,210,0" Width="66" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Margin="0,0,2,0" Source="/Resources\script_add.png" />
+                <TextBlock>Add</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Click="BtClearSchemaClick" Margin="0,232,138,0" Width="66" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Margin="0,0,2,0" Source="/Resources\cross.png" />
+                <TextBlock>Clear</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Left" Click="BtValidateSchemaClick" Margin="11,232,0,0" Width="87" Height="30">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="16" Height="16" Margin="0,0,2,0" Source="/Resources\cog.png" />
+                <TextBlock>Validate</TextBlock>
+            </StackPanel>
+        </Button>
+        <GroupBox Header="RFC draft version" Height="109" HorizontalAlignment="Right" Margin="0,6,6,0" Name="groupBox1" VerticalAlignment="Top" Width="119">
+            <Grid>
+                <RadioButton Content="1" Height="16" Margin="6,6,0,0" Name="radioButton1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" IsEnabled="False" GroupName="SchemaVersion" Foreground="White" />
+                <RadioButton Content="2" Height="16" Margin="6,28,0,0" Name="radioButton2" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" IsEnabled="False" GroupName="SchemaVersion" Foreground="White" />
+                <RadioButton Content="3" Height="16" Margin="6,50,0,0" Name="radioButton3" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Left" Width="40" GroupName="SchemaVersion" Foreground="White" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Schema files" Height="220" Margin="5,6,132,0" Name="groupBox2" VerticalAlignment="Top">
+            <Grid>
+                <DataGrid Name="dgSchemaFiles" 
+					HeadersVisibility="None" AllowDrop="True" AutoGenerateColumns="True" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Focusable="False"
+					Margin="-3,0,-3,-3"
+					AlternatingRowBackground="#FFE8E8E8" HorizontalGridLinesBrush="#FFBEBEBE" VerticalGridLinesBrush="#FFBEBEBE" Background="Gray" BorderBrush="#333333" RowBackground="#FFDEDEDE"  
+					DragDrop.Drop="DgSchemaDragDrop" DragEnter="DataGridDragEnter" LoadingRow="DgSchemaFilesLoadingRow" MouseDoubleClick="DgSchemaRowDblClick" SelectedCellsChanged="DgSchemaFilesSelectedCellsChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Detail" Margin="6,276,6,6" Name="groupBox3">
+            <Grid>
+                <TextBox Margin="-3,0,-3,-3" BorderBrush="#00000000" Name="tbSchemaDetail" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" BorderThickness="0" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>
